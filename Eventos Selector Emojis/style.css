@@ -1,0 +1,59 @@
+:root {
+    --rtc-color-1: black;
+    --rtc-color-2: orange;
+    --rtc-color-3: white;
+}
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--rtc-color-1);
+    height: 100svh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  section {
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    border: 3px solid var(--rtc-color-2);
+  }
+  section h2 {
+    text-align: center;
+    color: var(--rtc-color-3);
+    font-size: 30px;
+    padding: 20px;
+  }
+  .send {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .send > input, .send > button { 
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+  }
+  .insert-emoji-here, .insert-num-here {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .insert-emoji-here > p {
+    font-size: 50px;
+    color: var(--rtc-color-3);
+  }
+  .insert-num-here > p {
+    font-size: 50px;
+    color: var(--rtc-color-3);
+  }
