@@ -4,7 +4,8 @@ document.body.appendChild(div);
 
 // 1.2 Inserta dinamicamente en un html un div que contenga una p con javascript.
 const div2 = document.createElement("div");
-div2.innerHTML = "<p></p>";
+const p1 = document.createElement("p");
+div2.appendChild(p1);
 document.body.appendChild(div2);
 
 // 1.3 Inserta dinamicamente en un html un div que contenga 6 p utilizando un loop con javascript.
@@ -31,17 +32,30 @@ h2.textContent = "Wubba Lubba dub dub";
 // 1.6 Basandote en el siguiente array crea una lista ul > li con los textos del array. 
 const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter'];
 const ul = document.createElement("ul");
-const li = document.createElement("li");
 
-for(let i = 0; i < apps.length; i++){
-    li.textContent = apps[i];
+apps.forEach(app => {
+    const li = document.createElement("li");
+    li.textContent = app;
     ul.appendChild(li);
-}
+});
 
 document.body.appendChild(ul);
 
 // 1.7 Elimina todos los nodos que tengan la clase .fn-remove-me
+document.querySelectorAll(".fn-remove-me").forEach(element => element.remove());
 
 // 1.8 Inserta una p con el texto 'Voy en medio!' entre los dos div.  Recuerda que no solo puedes insertar elementos con .appendChild.
+const p2 = document.createElement("p");
+p2.textContent = "Voy en medio!";
+const allDivs = document.querySelectorAll("div");
+document.body.insertBefore(p2, allDivs[1]);
+
 
 // 1.9 Inserta p con el texto 'Voy dentro!', dentro de todos los div con la clase .fn-insert-here
+const fnInsertHereDivs = document.querySelectorAll(".fn-insert-here");
+
+fnInsertHereDivs.forEach(div => {
+    const newP = document.createElement("p");
+    newP.textContent = "Voy dentro!";
+    div.appendChild(newP);
+});
