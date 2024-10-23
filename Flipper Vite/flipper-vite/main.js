@@ -20,4 +20,15 @@ const addOptionsToColorPicker = () => {
   })
 }
 
-addOptionsToColorPicker()
+const addEventListenerToColorPicker = () => {
+  const colorPickerSelect = document.querySelector("#color-picker");
+
+  colorPickerSelect.addEventListener ("change",(event) => {
+    const newColor = event.target.value;
+    document.body.style.backgroundColor = newColor;
+  });
+};
+
+
+addOptionsToColorPicker();
+addEventListenerToColorPicker();
